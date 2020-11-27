@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { addList,deleteList} from '../action/action'
+import { addList,minusList,deleteList} from '../action/action'
 import shoppingList from '../components/shoppingList'
 
 const mapStateToProps = (state) => {
@@ -14,6 +14,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addList:(list)=>{
             dispatch(addList(list))
+        },
+        minusList:(list)=>{
+            dispatch(minusList(list))
         },
         deleteList:(list) => {
             dispatch(deleteList(list))

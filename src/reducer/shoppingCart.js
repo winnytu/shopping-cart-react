@@ -8,11 +8,19 @@ const exitItem = (state={},action) => {
                     num : state.num+1
                 })
             }
-            
+        case 'MINUS_LIST':
+            if (state.id !== action.item.id){
+                return state
+            } else {
+                return Object.assign({},state,{
+                    num : state.num-1
+                })
+            }  
             
         default:
             return state
     }
+    
 }
 
 
@@ -40,6 +48,22 @@ const shoppingCart = (state=[],action) => {
             } else {
                 return state.map(t =>
                     exitItem(t,action))
+            }
+        case 'MINUS_LIST':
+            let isMore = state.find(item=>{
+                if (item.num>1){
+                    return true
+                } else {
+                    return false
+                }
+            })
+            if (isMore){
+                return state.map(t =>
+                    exitItem(t,action))
+            } else {
+                return state.filter(item=>{
+                    return item.id !==action.item.id
+                })
             }
         case 'DELETE_LIST':
             return state.filter(item=>{

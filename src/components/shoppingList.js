@@ -20,6 +20,9 @@ const ShoppingListStyle = styled.div`
         td {
             height: 100px;
             text-align:center;
+            button {
+                margin: 0 10px;
+            }
         }
     }
     .total {
@@ -50,8 +53,8 @@ const ShoppingList = (props) => {
                     {       props.shoppingList.length>0?
                             props.shoppingList.map((item,i)=>
                             <tr key={i}>
-                                <td>{item.title}</td><td>{item.price}</td><td>{item.num}</td><td>{item.price*item.num}</td><td onClick={e=>props.deleteList(item)}>刪除</td>
-                            </tr>):<tr><td colSpan="4">尚無紀錄</td></tr>
+                                <td>{item.title}</td><td>{item.price}</td><td><button onClick={e=>props.minusList(item)}>-</button>{item.num}<button onClick={e=>props.addList(item)}>+</button></td><td>{item.price*item.num}</td><td onClick={e=>props.deleteList(item)}>刪除</td>
+                            </tr>):<tr><td colSpan="5">尚無紀錄</td></tr>
 
                         
                     }

@@ -53,7 +53,7 @@ export const ItemStyle = styled.div`
 `
 
 const ShopItems = (props) => {
-    const [items, setItems] = useState([{id:101,title:'格子襯衫',img:require('../assets/img/101.jpeg'),price:399},{id:102,title:'碎花襯衫',img:require('../assets/img/102.jpg'),price:599},{id:103,title:'白色襯衫',img:require('../assets/img/103.jpg'),price:250},{id:201,title:'格子裙',img:require('../assets/img/201.jpg'),price:399},{id:202,title:'碎花裙',img:require('../assets/img/202.jpeg'),price:450}])
+    const [items, setItems] = useState([{id:101,title:'格子襯衫',img:require('../assets/img/101.jpeg'),price:399},{id:102,title:'碎花襯衫',img:require('../assets/img/102.jpg'),price:599},{id:103,title:'白色襯衫',img:require('../assets/img/103.jpg'),price:250},{id:201,title:'碎花裙',img:require('../assets/img/201.jpg'),price:399},{id:202,title:'格子裙',img:require('../assets/img/202.jpeg'),price:450}])
     return (
         <ShopItemsStyle>
             {
